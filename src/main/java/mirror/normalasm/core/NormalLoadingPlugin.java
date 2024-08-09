@@ -10,7 +10,6 @@ import org.apache.commons.lang3.SystemUtils;
 import mirror.normalasm.UnsafeNormal;
 import mirror.normalasm.config.NormalConfig;
 import mirror.normalasm.NormalLogger;
-import mirror.normalasm.spark.NormalSparker;
 import mirror.normalasm.api.DeobfuscatingRewritePolicy;
 import mirror.normalasm.api.StacktraceDeobfuscator;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
@@ -35,31 +34,6 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
     public static final boolean isDeobf = FMLLaunchHandler.isDeobfuscatedEnvironment();
 
-    static {
-        if (!isDeobf && (NormalConfig.instance.sparkProfileCoreModLoading || NormalConfig.instance.sparkProfileEntireGameLoad)) {
-            File modsFolder = new File(Launch.minecraftHome, "mods");
-            for (File file : modsFolder.listFiles()) {
-                if (file.isDirectory()) {
-                    continue;
-                }
-                File toAddToCp = null;
-                try (ZipFile jar = new ZipFile(file)) {
-                    ZipEntry sparkProto = jar.getEntry("spark/spark.proto");
-                    if (sparkProto != null) {
-                        toAddToCp = file;
-                    }
-                } catch (IOException ignored) { }
-                if (toAddToCp != null) {
-                    try {
-                        Launch.classLoader.addURL(toAddToCp.toURI().toURL());
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    }
-                    break;
-                }
-            }
-        }
-    }
 
     // public static final boolean isModDirectorInstalled = NormalReflector.doesTweakExist("net.jan.moddirector.launchwrapper.ModDirectorTweaker");
     public static final boolean isVMOpenJ9 = SystemUtils.JAVA_VM_NAME.toLowerCase(Locale.ROOT).contains("openj9");
@@ -68,12 +42,6 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public NormalLoadingPlugin() {
         NormalLogger.instance.info("NormalASM is on the {}-side.", isClient ? "client" : "server");
         NormalLogger.instance.info("NormalASM is preparing and loading in mixins since Rongmario's too lazy to write pure ASM at times despite the mod being called 'NormalASM'");
-        if (NormalConfig.instance.sparkProfileCoreModLoading) {
-            NormalSparker.start("coremod");
-        }
-        if (NormalConfig.instance.sparkProfileEntireGameLoad) {
-            NormalSparker.start("game");
-        }
         if (NormalConfig.instance.outdatedCaCertsFix) {
             try (InputStream is = this.getClass().getResource("/cacerts").openStream()) {
                 File cacertsCopy = File.createTempFile("cacerts", "");

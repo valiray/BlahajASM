@@ -86,8 +86,6 @@ repositories {
 dependencies {
     embed 'me.nallar.whocalled:WhoCalled:1.1'
     implementation 'zone.rong:mixinbooter:7.1'
-    implementation files('./etc/spark-forge-deobf.jar')
-
     compileOnly 'com.enderio.core:EnderCore:1.12.2-+'
     compileOnly ('com.enderio:EnderIO:1.12.2-+') {
         transitive = false

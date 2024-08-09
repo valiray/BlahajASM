@@ -74,7 +74,6 @@ public class NormalConfig {
     public boolean fixAmuletHolderCapability, delayItemStackCapabilityInit;
     public boolean fixFillBucketEventNullPointerException, fixTileEntityOnLoadCME, removeForgeSecurityManager, fasterEntitySpawnPreparation, fixDimensionTypesInliningCrash;
     public boolean fixMC30845, fixMC31681, fixMC88176, fixMC129057, fixMC129556, fixMC186052, resolveMC2071, limitSkinDownloadingThreads;
-    public boolean sparkProfileEntireGameLoad, sparkProfileEntireWorldLoad, sparkProfileCoreModLoading, sparkProfileConstructionStage, sparkProfilePreInitializationStage, sparkProfileInitializationStage, sparkProfilePostInitializationStage, sparkProfileLoadCompleteStage, sparkProfileFinalizingStage, sparkProfileWorldAboutToStartStage, sparkProfileWorldStartingStage, sparkProfileWorldStartedStage, includeAllThreadsWhenProfiling, sparkSummarizeHeapSpaceAfterGameLoads, sparkSummarizeHeapSpaceAfterWorldLoads;
     public boolean furnaceExperienceFCFS, furnaceExperienceVanilla, furnaceExperienceMost;
     public boolean makeEventsSingletons;
     public boolean crashReportImprovements, returnToMainMenuAfterCrash, rewriteLoggingWithDeobfuscatedNames, hideToastsAndContinuePlaying;
@@ -170,22 +169,6 @@ public class NormalConfig {
         fixMC186052 = getBoolean("fixMC186052", "mcfixes", "Fixes MC-186052: https://bugs.mojang.com/browse/MC-186052", true);
         resolveMC2071 = getBoolean("resolveMC2071", "mcfixes", "Resolves MC-2071: https://bugs.mojang.com/browse/MC-2071", true);
         limitSkinDownloadingThreads = getBoolean("limitSkinDownloadingThreads", "mcfixes", "Limits skin downloading threads to a maximum of half of available CPU cores", true);
-
-        sparkProfileEntireGameLoad = getBoolean("sparkProfileEntireGameLoad", "spark", "When Spark is installed, profile the loading of the game in its entirety", false);
-        sparkProfileEntireWorldLoad = getBoolean("sparkProfileEntireWorldLoad", "spark", "When Spark is installed, profile the loading of the world in its entirety", false);
-        sparkProfileCoreModLoading = getBoolean("sparkProfileCoreModLoading", "spark", "When Spark is installed, profile the loading of coremods, but only those that load after NormalASM", false);
-        sparkProfileConstructionStage = getBoolean("sparkProfileConstructionStage", "spark", "When Spark is installed, profile the loading of FMLConstructionEvent stage", false);
-        sparkProfilePreInitializationStage = getBoolean("sparkProfilePreInitializationStage", "spark", "When Spark is installed, profile the loading of FMLPreInitializationEvent stage", false);
-        sparkProfileInitializationStage = getBoolean("sparkProfileInitializationStage", "spark", "When Spark is installed, profile the loading of FMLInitializationEvent stage", false);
-        sparkProfilePostInitializationStage = getBoolean("sparkProfilePostInitializationStage", "spark", "When Spark is installed, profile the loading of FMLPostInitializationEvent stage", false);
-        sparkProfileLoadCompleteStage = getBoolean("sparkProfileLoadCompleteStage", "spark", "When Spark is installed, profile the loading of FMLLoadCompleteEvent stage", false);
-        sparkProfileFinalizingStage = getBoolean("sparkProfileFinalizingStage",  "spark", "When Spark is installed, profile the loading of FMLModIdMappingEvent stage, this is the last event fired before the game is finalized", false);
-        sparkProfileWorldAboutToStartStage = getBoolean("sparkProfileWorldAboutToStartStage", "spark", "When Spark is installed, profile the loading of FMLServerAboutToStartEvent stage", false);
-        sparkProfileWorldStartingStage = getBoolean("sparkProfileWorldStartingStage", "spark", "When Spark is installed, profile the loading of FMLServerStartingEvent stage", false);
-        sparkProfileWorldStartedStage = getBoolean("sparkProfileWorldStartedStage", "spark", "When Spark is installed, profile the loading of FMLServerStartedEvent stage", false);
-        includeAllThreadsWhenProfiling = getBoolean("includeAllThreadsWhenProfiling", "spark", "Allow NormalASM's Spark profiling to include all threads that are present", true);
-        sparkSummarizeHeapSpaceAfterGameLoads = getBoolean("sparkSummarizeHeapSpaceAfterGameLoads", "spark", "When Spark is installed, summarize the heap space (/spark heapsummary) when the game finishes loading", false);
-        sparkSummarizeHeapSpaceAfterWorldLoads = getBoolean("sparkSummarizeHeapSpaceAfterWorldLoads", "spark", "When Spark is installed, summarize the heap space (/spark heapsummary) when the world finishes loading", false);
 
         furnaceExperienceFCFS = getBoolean("furnaceExperienceFCFS", "furnace", "When optimizeFurnaceRecipeStore is true, experience is determined by who registers the entry first, this is also the fallback option if all three options aren't true", true);
         furnaceExperienceVanilla = getBoolean("furnaceExperienceVanilla", "furnace", "When optimizeFurnaceRecipeStore is true, experience is determined the vanilla way, this method is the most inefficient and random", false);
