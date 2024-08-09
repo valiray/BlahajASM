@@ -17,6 +17,6 @@ public class MinecraftServerMixin {
     private void setPriorityAndStart(Thread serverThread) {
         serverThread.setPriority(Thread.MIN_PRIORITY + 2);
         serverThread.start();
-        LOGGER.debug("NormalASM: Started server thread, with {} priority", serverThread.getPriority());
+        LOGGER.debug("BlahajASM: Started server thread, with {} priority", serverThread.getPriority());
     }
 }

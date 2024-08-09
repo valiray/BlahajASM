@@ -106,7 +106,7 @@ public class NormalStringPool {
             }
             int size = getSize();
             long deduplicatedCount = getDeduplicatedCount();
-            list.add(String.format("%s%s%s: %s strings processed. %s unique, %s deduplicated.", TextFormatting.AQUA, "<NormalASM>", TextFormatting.RESET, deduplicatedCount, size, deduplicatedCount - size));
+            list.add(String.format("%s%s%s: %s strings processed. %s unique, %s deduplicated.", TextFormatting.AQUA, "<BlahajASM>", TextFormatting.RESET, deduplicatedCount, size, deduplicatedCount - size));
         }
     }
 

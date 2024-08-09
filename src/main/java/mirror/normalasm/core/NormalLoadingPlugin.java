@@ -40,8 +40,8 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
     public static final boolean isClient = FMLLaunchHandler.side() == Side.CLIENT;
 
     public NormalLoadingPlugin() {
-        NormalLogger.instance.info("NormalASM is on the {}-side.", isClient ? "client" : "server");
-        NormalLogger.instance.info("NormalASM is preparing and loading in mixins since Rongmario's too lazy to write pure ASM at times despite the mod being called 'NormalASM'");
+        NormalLogger.instance.info("BlahajASM is on the {}-side.", isClient ? "client" : "server");
+        NormalLogger.instance.info("BlahajASM is preparing and loading in mixins since Rongmario's too lazy to write pure ASM at times despite the mod being called 'BlahajASM'");
         if (NormalConfig.instance.outdatedCaCertsFix) {
             try (InputStream is = this.getClass().getResource("/cacerts").openStream()) {
                 File cacertsCopy = File.createTempFile("cacerts", "");
@@ -90,7 +90,7 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     }
                 }
                 if (needToDGSFFFF) {
-                    NormalLogger.instance.fatal("NormalASM notices that you're using Eclipse OpenJ9 {}!", SystemUtils.JAVA_VERSION);
+                    NormalLogger.instance.fatal("BlahajASM notices that you're using Eclipse OpenJ9 {}!", SystemUtils.JAVA_VERSION);
                     NormalLogger.instance.fatal("This OpenJ9 version is outdated and contains a critical bug: https://github.com/eclipse-openj9/openj9/issues/8353");
                     NormalLogger.instance.fatal("Either use '-Xjit:disableGuardedStaticFinalFieldFolding' as part of your java arguments, or update OpenJ9!");
                 }

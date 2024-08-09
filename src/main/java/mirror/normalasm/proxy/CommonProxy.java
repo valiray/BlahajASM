@@ -39,8 +39,8 @@ public class CommonProxy {
         boolean vanillaFix = Loader.isModLoaded("vanillafix");
         if (texFix || vanillaFix) {
             List<String> messages = new ArrayList<>();
-            messages.add("NormalASM has replaced and improved upon functionalities from the following mods.");
-            messages.add("Therefore, these mods are now incompatible with NormalASM:");
+            messages.add("BlahajASM has replaced and improved upon functionalities from the following mods.");
+            messages.add("Therefore, these mods are now incompatible with BlahajASM:");
             messages.add("");
             if (texFix) {
                 messages.add(TextFormatting.BOLD + "TexFix");

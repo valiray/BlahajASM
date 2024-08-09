@@ -5,6 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 public class NormalLogger {
 
-    public static final Logger instance = LogManager.getLogger("NormalASM");
+    public static final Logger instance = LogManager.getLogger("BlahajASM");
 
 }

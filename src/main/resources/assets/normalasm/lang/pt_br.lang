@@ -10,7 +10,7 @@ normalasm.crashscreen.summary=O Minecraft parou em decorrência de um erro.
 normalasm.crashscreen.paragraph1.line1=Os seguinte(s) mod(s) foram apontados como possíveis causas:
 
 normalasm.crashscreen.unknownCause=Desconhecido
-normalasm.crashscreen.identificationErrored=[Erro ao identificar, relatar ao NormalASM]
+normalasm.crashscreen.identificationErrored=[Erro ao identificar, relatar aoBlahajASM]
 
 normalasm.crashscreen.paragraph2.line1=Clique em qualquer mod da lista para acessar a página de assistência. Um
 normalasm.crashscreen.paragraph2.line2=relatório foi criado e pode ser acessado aqui (clique):
@@ -19,7 +19,7 @@ normalasm.crashscreen.reportSaveFailed=[Erro ao salvar o relatório, ver o regis
 
 normalasm.crashscreen.paragraph3.line1=Clique em "Acessar link" para abri-lo em seu navegador. Se preferir,
 normalasm.crashscreen.paragraph3.line2=envie este relatório para o desenvolvedor do mod a fim de ajudá-lo
-normalasm.crashscreen.paragraph3.line3=a corrigir o erro. Já que o NormalASM está instalado, você pode
+normalasm.crashscreen.paragraph3.line3=a corrigir o erro. Já que o BlahajASMestá instalado, você pode
 normalasm.crashscreen.paragraph3.line4=continuar jogando.
 
 normalasm.initerrorscreen.title=O Minecraft não pôde ser inicializado!
@@ -41,7 +41,7 @@ normalasm.warnscreen.paragraph3.line1=Clique em "Acessar link" para abri-lo em s
 normalasm.warnscreen.paragraph3.line2=envie este relatório ao desenvolvedor do mod para ajudá-lo a
 normalasm.warnscreen.paragraph3.line3=corrigir o erro. Você pode continuar jogando, porém, esteja ciente
 normalasm.warnscreen.paragraph3.line4=de que mais falhas podem ocorrer. Este aviso pode ser desativado em
-normalasm.warnscreen.paragraph3.line5=Mods > NormalASM > Config. > Erros
+normalasm.warnscreen.paragraph3.line5=Mods > BlahajASM> Config. > Erros
 
 normalasm.notification.title.unknown=Ocorreu um problema desconhecido!
 normalasm.notification.title.mod=%s está com problemas!

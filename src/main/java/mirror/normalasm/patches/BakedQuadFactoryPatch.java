@@ -393,7 +393,7 @@ public final class BakedQuadFactoryPatch {
         methodVisitor.visitFrame(F_SAME, 0, null, 0, null);
         methodVisitor.visitTypeInsn(NEW, "java/lang/IllegalStateException");
         methodVisitor.visitInsn(DUP);
-        methodVisitor.visitLdcInsn("NormalASM came and destroyed everything.");
+        methodVisitor.visitLdcInsn("BlahajASM came and destroyed everything.");
         methodVisitor.visitMethodInsn(INVOKESPECIAL, "java/lang/IllegalStateException", "<init>", "(Ljava/lang/String;)V", false);
         methodVisitor.visitInsn(ATHROW);
         Label l32 = new Label();

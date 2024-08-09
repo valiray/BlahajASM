@@ -70,7 +70,7 @@ public class NormalVertexDataPool {
         Minecraft minecraft = Minecraft.getMinecraft();
         if (minecraft.gameSettings.showDebugInfo) {
             ArrayList<String> list = event.getLeft();
-            list.add(String.format("%s%s%s: %s vertex data arrays processed. %s unique, %s deduplicated.", TextFormatting.AQUA, "<NormalASM>", TextFormatting.RESET, deduplicatedCount, uniqueCount, deduplicatedCount - uniqueCount));
+            list.add(String.format("%s%s%s: %s vertex data arrays processed. %s unique, %s deduplicated.", TextFormatting.AQUA, "<BlahajASM>", TextFormatting.RESET, deduplicatedCount, uniqueCount, deduplicatedCount - uniqueCount));
         }
     }
 

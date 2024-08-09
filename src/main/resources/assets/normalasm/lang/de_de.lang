@@ -12,5 +12,5 @@ normalasm.crashscreen.reportSaveFailed=[FEHLER BEIM SPEICHERN, SIEHE LOG]
 
 normalasm.crashscreen.paragraph3.line1=Klicke auf die Schaltfläche "Link erhalten", um ihn im Browser zu
 normalasm.crashscreen.paragraph3.line2=öffnen. Du bist aufgefordert, diesen Bericht an den Modhersteller
-normalasm.crashscreen.paragraph3.line3=zu senden, um ihm zu helfen, das Problem zu beheben. Da NormalASM
+normalasm.crashscreen.paragraph3.line3=zu senden, um ihm zu helfen, das Problem zu beheben. DaBlahajASM
 normalasm.crashscreen.paragraph3.line4=installiert ist, kannst du trotz des Absturzes weiterspielen.

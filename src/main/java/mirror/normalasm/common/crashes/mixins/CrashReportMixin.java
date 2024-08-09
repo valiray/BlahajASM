@@ -74,7 +74,7 @@ public abstract class CrashReportMixin implements ICrashReportSuspectGetter {
     public String getCompleteReport() {
         StringBuilder builder = new StringBuilder();
         builder.append("---- Minecraft Crash Report ----\n")
-                .append("// NormalASM deobfuscated this stacktrace using MCP's stable-39 mappings.\n")
+                .append("// BlahajASM deobfuscated this stacktrace using MCP's stable-39 mappings.\n")
                 .append("// ").append(getWittyComment());
 
         builder.append("\n\n")

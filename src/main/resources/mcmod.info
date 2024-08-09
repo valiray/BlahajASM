@@ -2,7 +2,7 @@
 {
   "modid": "normalasm",
   "name": "BlahajASM",
-  "description": "Blahaj has bytecode manipulated your game.:3",
+  "description": "Blahaj has bytecode manipulated your game. :3",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "https://github.com/valiray/BlahajASM",
