@@ -1,7 +1,7 @@
 {
-  "package": "zone.rong.loliasm.vanillafix.bugfixes.mixins",
+  "package": "mirror.normalasm.vanillafix.bugfixes.mixins",
   "required": true,
-  "refmap": "mixins.loliasm.refmap.json",
+  "refmap": "mixins.normalasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.7",
   "compatibilityLevel": "JAVA_8",

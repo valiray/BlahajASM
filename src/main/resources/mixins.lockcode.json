@@ -1,6 +1,6 @@
 {
-  "package": "zone.rong.loliasm.common.lockcode.mixins",
-  "refmap": "mixins.loliasm.refmap.json",
+  "package": "mirror.normalasm.common.lockcode.mixins",
+  "refmap": "mixins.normalasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

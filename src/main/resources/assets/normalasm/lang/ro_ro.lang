@@ -1,0 +1,17 @@
+normalasm.gui.getLink=Obțineți un link
+normalasm.gui.failed=[Eșuat]
+
+normalasm.crashscreen.title=Minecraft a crash!
+normalasm.crashscreen.summary=Minecraft întâmpinat o problemă și a crash
+
+normalasm.crashscreen.paragraph1.line1=Următoarele mod(uri) au fost identificate ca cauze posibile:
+
+normalasm.crashscreen.paragraph2.line1=Faceți click pe ori care mod din această lista pentru a merge
+normalasm.crashscreen.paragraph2.line2=pe site-ul lor pentru suport. Un raport poate fi găsit aici:
+
+normalasm.crashscreen.reportSaveFailed=[Eroare salvând raportul, vedeți log-ul]
+
+normalasm.crashscreen.paragraph3.line1=Faceți click pe butonul "Obțineți un link" pentru a-l deschide
+normalasm.crashscreen.paragraph3.line2=in browser. Sunteți encurajați să-l trimiteți la autorul modului
+normalasm.crashscreen.paragraph3.line3=pentru a-l ajuta să rezolve problema. Fiind că NormalASM e
+normalasm.crashscreen.paragraph3.line4=instalat, puteți continua de a juca în ciuda crash-ului.

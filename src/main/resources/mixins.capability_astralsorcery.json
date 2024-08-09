@@ -1,6 +1,6 @@
 {
-  "package": "zone.rong.loliasm.common.capability.astralsorcery.mixins",
-  "refmap": "mixins.loliasm.refmap.json",
+  "package": "mirror.normalasm.common.capability.astralsorcery.mixins",
+  "refmap": "mixins.normalasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

@@ -1,0 +1,34 @@
+normalasm.gui.getLink=Obtenir un lien
+normalasm.gui.failed=[Échoué]
+normalasm.gui.keepPlaying=Continuer à jouer
+
+normalasm.crashscreen.title=Minecraft a crashé!
+normalasm.crashscreen.summary=Minecraft a rencontré un problème et a crashé.
+
+normalasm.crashscreen.paragraph1.line1=Ces mod(s) ont été identifiés comme des causes potentielles:
+
+normalasm.crashscreen.unknownCause=Cause inconnue
+normalasm.crashscreen.identificationErrored=[Problème dans l'identification, raportez à NormalASM]
+
+normalasm.crashscreen.paragraph2.line1=Cliquez n'importe quel mod dans la liste pour aller a leur page
+normalasm.crashscreen.paragraph2.line2=pour du support. Un raport a été génére et se trouve ici (cliquez):
+
+normalasm.crashscreen.reportSaveFailed=[Erreur durant la sauvegarde, voir le log]
+
+normalasm.crashscreen.paragraph3.line1=Cliquez le bouton « Obtenir un lien » pour l'ouvrir dans votre
+normalasm.crashscreen.paragraph3.line2=navigateur web. Vous êtez encouragé de l'envoyer à l'auteur du
+normalasm.crashscreen.paragraph3.line3=mod pour l'aider à résoudre le problême. Vu que NormalASM est
+normalasm.crashscreen.paragraph3.line4=installé, vous pouvez continuer a jouer malgré le crash.
+
+normalasm.warnscreen.title=Problème potentiel trouvé!
+normalasm.warnscreen.summary=Minecraft a rencontré un problème.
+
+normalasm.warnscreen.paragraph1.line1=Ceci n'a pas causé un crash, mais il y aura problement des
+normalasm.warnscreen.paragraph1.line2=conséquances comme la corruption du monde, ou des choses brisées.
+normalasm.warnscreen.paragraph1.line3=Ces mod(s) ont été identifiés comme des causes potentielles:
+
+normalasm.warnscreen.paragraph3.line1=Cliquez le bouton « Obtenir un lien » pour l'ouvrir dans votre
+normalasm.warnscreen.paragraph3.line2=navigateur web. Vous êtez encouragé de l'envoyer à l'auteur du
+normalasm.warnscreen.paragraph3.line3=mod pour l'aider à résoudre le problême. Vous pouvez continuer
+normalasm.warnscreen.paragraph3.line4=à jouer, mais sachez qu'il y aura surement d'autres problèmes.
+normalasm.warnscreen.paragraph3.line5=Ce message peut être désactivé dans la configuration du mod.

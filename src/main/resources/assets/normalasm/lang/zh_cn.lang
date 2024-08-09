@@ -1,0 +1,69 @@
+normalasm.gui.getLink=获取链接
+normalasm.gui.failed=[失败]
+normalasm.gui.keepPlaying=继续游戏
+normalasm.gui.restart=重启Minecraft
+
+normalasm.crashscreen.title=Minecraft崩溃啦!
+normalasm.crashscreen.summary=Minecraft遇到一个问题崩溃了。
+
+normalasm.crashscreen.paragraph1.line1=下列的mod被确定为崩溃的可能原因:
+
+normalasm.crashscreen.unknownCause=未知
+normalasm.crashscreen.identificationErrored=[鉴别错误,请报告给NormalASM]
+
+normalasm.crashscreen.paragraph2.line1=点击列表中的任意mod即可访问它们的网站获取技术支持。
+normalasm.crashscreen.paragraph2.line2=一份报告已经生成，你可以在这里找到（点击）:
+
+normalasm.crashscreen.reportSaveFailed=[保存报告错误,请查看日志]
+
+normalasm.crashscreen.paragraph3.line1=点击"获取链接"按钮在你的浏览器中打开它。
+normalasm.crashscreen.paragraph3.line2=我们建议您将此报告发送给mod的作者以帮助它们修复问题。
+normalasm.crashscreen.paragraph3.line3=由于安装了NormalASM，尽管发生了崩溃但是你可以继续游戏。
+normalasm.crashscreen.paragraph3.line4=
+
+normalasm.initerrorscreen.title=Minecraft未能启动!
+normalasm.initerrorscreen.summary=启动过程中一个错误阻止了Minecraft的启动
+
+normalasm.initerrorscreen.paragraph3.line1=点击"获取链接"按钮在你的浏览器中打开它。
+normalasm.initerrorscreen.paragraph3.line2=我们建议您将此报告发送给mod的作者以帮助它们修复问题。
+normalasm.initerrorscreen.paragraph3.line3=不幸的是,在发生这个错误之后继续加载minecraft时不可能的。
+normalasm.initerrorscreen.paragraph3.line4=
+
+normalasm.warnscreen.title=发现潜在问题!
+normalasm.warnscreen.summary=Minecraft遇到了问题。
+
+normalasm.warnscreen.paragraph1.line1=This did not cause a crash, but there will likely still be
+normalasm.warnscreen.paragraph1.line2=consequences such as world corruption, or broken features.
+normalasm.warnscreen.paragraph1.line3=The following mod(s) have been identified as potential causes:
+
+normalasm.warnscreen.paragraph3.line1=点击"获取链接"按钮在你的浏览器中打开它。
+normalasm.warnscreen.paragraph3.line2=我们建议您将此报告发送给mod的作者以帮助它们修复问题。
+normalasm.warnscreen.paragraph3.line3=您可以继续游戏,但请注意，您稍后可能会遇到一些问题。
+normalasm.warnscreen.paragraph3.line4=可以在 Mods > NormalASM > Config > Crashes 中禁用此警告。
+normalasm.warnscreen.paragraph3.line5=
+
+normalasm.notification.title.unknown=发生未知问题!
+normalasm.notification.title.mod=%s 遇到问题!
+normalasm.notification.description=按Ctrl + I获取更多信息
+
+normalasm.fixes=启用/禁用 修复
+normalasm.fixes.tooltip=控制启用和禁用哪些修复。
+normalasm.crashes=崩溃选项
+normalasm.crashes.tooltip=关于如何处理崩溃的选项
+normalasm.crashes.problemAction.log=日志
+normalasm.crashes.problemAction.notification=通知
+normalasm.crashes.problemAction.warningScreen=警告屏幕
+normalasm.crashes.problemAction.crash=崩溃
+normalasm.crashes.scheduledTaskproblemAction=计划任务例外操作
+normalasm.crashes.scheduledTaskproblemAction.tooltip=计划任务引发异常时应该发生什么
+normalasm.crashes.errorNotificationDuration=错误通知持续时间
+normalasm.crashes.errorNotificationDuration.tooltip=以毫秒为单位显示错误通知的时间
+normalasm.crashes.replaceErrorNotifications=替换错误通知
+normalasm.crashes.replaceErrorNotifications.tooltip=当连续出现多个错误时，请替换通知而不是顺序出现更多通知
+normalasm.crashes.hasteURL=Haste URL
+normalasm.crashes.hasteURL.tooltip=The URL to the root of the haste instance to upload crash reports to, without a trailing slash.
+
+
+normalasm.debug.switch_profiler.help=F3 + S = Cycle client <-> integrated server profiler
+normalasm.debug.switch_profiler.server=使用服务器分析器
+normalasm.debug.switch_profiler.client=使用客户端分析器
