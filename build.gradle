@@ -166,7 +166,6 @@ jar {
                 'FMLCorePluginContainsFMLMod': true,
                 'FMLCorePlugin': 'mirror.normalasm.core.NormalLoadingPlugin',
                 'ForceLoadAsMod': project.gradle.startParameter.taskNames[0] == 'build',
-                'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
                 'FMLAT': 'normalasm_at.cfg'
         ])
     }
