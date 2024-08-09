@@ -1,14 +1,14 @@
 [
 {
   "modid": "normalasm",
-  "name": "NormalASM",
-  "description": "NormalASM has bytecode manipulated your game.",
+  "name": "BlahajASM",
+  "description": "Blahaj has bytecode manipulated your game.:3",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "https://github.com/mirrorcult/NormalASM",
+  "url": "https://github.com/valiray/BlahajASM",
   "updateUrl": "",
-  "authorList": ["Rongmario"],
-  "logoFile": "assets/normalasm/normalasm.png",
+  "authorList": ["Rongmario", "mirrorcult", "skmedix", "fonnymunkey", "Valiray"],
+  "logoFile": "assets/normalasm/blahajasm.png",
   "screenshots": [],
   "dependencies": []
 }
