@@ -31,7 +31,7 @@ import java.util.zip.ZipFile;
 @IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
 public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
-    public static final String VERSION = "5.19";
+    public static final String VERSION = "5.20";
 
     public static final boolean isDeobf = FMLLaunchHandler.isDeobfuscatedEnvironment();
 
@@ -81,8 +81,8 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 FileUtils.copyInputStreamToFile(is, cacertsCopy);
                 System.setProperty("javax.net.ssl.trustStore", cacertsCopy.getAbsolutePath());
                 NormalLogger.instance.warn("Replacing CA Certs with an updated one...");
-            } catch (IOException e) {
-                NormalLogger.instance.warn("Unable to replace CA Certs", e);
+            } catch (Exception e) {
+                NormalLogger.instance.warn("Unable to replace CA Certs.", e);
             }
         }
         if (NormalConfig.instance.removeForgeSecurityManager) {
