@@ -20,4 +20,4 @@ Significant changes from CensoredASM:
 
 As with the original, BlahajASM is incompatible with VanillaFix and TexFix as their functionalities have been improved and added directly to the mod.
 
-Due to the changes made in this mod, if you have any issues, please report them to the linked issue tracker at the top for BlahajASM, not the original mod.
+Due to the changes made in this mod, if you have any issues, please report them to the linked issue tracker at the top for [BlahajASM](https://github.com/valiray/BlahajASM/issues), not the original mod.
