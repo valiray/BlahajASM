@@ -1,5 +1,6 @@
 package mirror.normalasm.common.crashes;
 
+import mirror.normalasm.config.NormalConfig;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -38,26 +39,53 @@ public class GuiWarningScreen extends GuiProblemScreen {
         int x = width / 2 - 155;
         int y = height / 4;
 
-        y -= 20;
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.summary"), x, y, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph1.line1"), x, y += 18, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph1.line2"), x, y += 9, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph1.line3"), x, y += 9, textColor);
+        y -= 26;
 
-        drawCenteredString(fontRenderer, getModListString(), width / 2, y += 11, 0xE0E000);
+        if (NormalConfig.instance.crashReportUpdatedScreens) {
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.summary"), x, y, textColor);
 
-        drawString(fontRenderer, I18n.format("normalasm.crashscreen.paragraph2.line1"), x, y += 11, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.crashscreen.paragraph2.line2"), x, y += 9, textColor);
+            drawCenteredString(fontRenderer, "\u00A7n" + I18n.format("normalasm.crashscreen.new.paragraph1.line1"), width / 2, y += 13, 0xFF0000);
 
-        drawCenteredString(fontRenderer, report.getFile() != null ?
-                "\u00A7n" + report.getFile().getName() :
-                I18n.format("normalasm.crashscreen.reportSaveFailed"), width / 2, y += 11, 0x00FF00);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph1.line1"), x, y += 13, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph1.line2"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph1.line3"), x, y += 9, textColor);
 
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line1"), x, y += 12, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line2"), x, y += 9, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line3"), x, y += 9, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line4"), x, y += 9, textColor);
-        drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line5"), x, y + 9, textColor);
+            drawCenteredString(fontRenderer, getModListString(), width / 2, y += 11, 0xE0E000);
+
+            drawString(fontRenderer, I18n.format("normalasm.crashscreen.new.paragraph3.line1"), x, y += 11, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.crashscreen.new.paragraph3.line2"), x, y += 9, textColor);
+
+            drawCenteredString(fontRenderer, report.getFile() != null ?
+                    "\u00A7n" + report.getFile().getName() :
+                    I18n.format("normalasm.crashscreen.reportSaveFailed"), width / 2, y += 11, 0x00FF00);
+
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph3.line1"), x, y += 12, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph3.line2"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph3.line3"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph3.line4"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.new.paragraph3.line5"), x, y + 9, textColor);
+        }
+        else {
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.summary"), x, y, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph1.line1"), x, y += 18, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph1.line2"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph1.line3"), x, y += 9, textColor);
+
+            drawCenteredString(fontRenderer, getModListString(), width / 2, y += 11, 0xE0E000);
+
+            drawString(fontRenderer, I18n.format("normalasm.crashscreen.paragraph2.line1"), x, y += 11, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.crashscreen.paragraph2.line2"), x, y += 9, textColor);
+
+            drawCenteredString(fontRenderer, report.getFile() != null ?
+                    "\u00A7n" + report.getFile().getName() :
+                    I18n.format("normalasm.crashscreen.reportSaveFailed"), width / 2, y += 11, 0x00FF00);
+
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line1"), x, y += 12, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line2"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line3"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line4"), x, y += 9, textColor);
+            drawString(fontRenderer, I18n.format("normalasm.warnscreen.paragraph3.line5"), x, y + 9, textColor);
+        }
 
         super.drawScreen(mouseX, mouseY, partialTicks);
     }

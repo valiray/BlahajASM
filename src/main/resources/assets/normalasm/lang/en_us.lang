@@ -6,21 +6,26 @@ normalasm.gui.disabledByConfig=Disabled by config
 
 normalasm.crashscreen.title=Minecraft crashed!
 normalasm.crashscreen.summary=Minecraft ran into a problem and crashed.
-
-normalasm.crashscreen.paragraph1.line1=The following mod(s) have been identified as potential causes:
-
 normalasm.crashscreen.unknownCause=Unknown
 normalasm.crashscreen.identificationErrored=[Error identifying, report toBlahajASM]
-
-normalasm.crashscreen.paragraph2.line1=Click any mod in the list to go to their website for support. A
-normalasm.crashscreen.paragraph2.line2=report has been generated with this name in your crash folder.
-
 normalasm.crashscreen.reportSaveFailed=[Error saving report, see log]
 
+normalasm.crashscreen.paragraph1.line1=The following mod(s) have been identified as potential causes:
+normalasm.crashscreen.paragraph2.line1=Click any mod in the list to go to their website for support. A
+normalasm.crashscreen.paragraph2.line2=report has been generated with this name in your crash folder.
 normalasm.crashscreen.paragraph3.line1=Click the "Get link" button to open it in your browser. You're
 normalasm.crashscreen.paragraph3.line2=encouraged to send this report to the mod's author to help
 normalasm.crashscreen.paragraph3.line3=them fix the issue. Since BlahajASMis installed, you can keep
 normalasm.crashscreen.paragraph3.line4=playing despite the crash.
+
+normalasm.crashscreen.new.paragraph1.line1=Do not screenshot this screen, read below!
+normalasm.crashscreen.new.paragraph2.line1=Possible causes have been identified:
+normalasm.crashscreen.new.paragraph3.line1=A crash report has been uploaded to the provided link, and
+normalasm.crashscreen.new.paragraph3.line2=saved with this name in your crash folder:
+normalasm.crashscreen.new.paragraph4.line1=If this is a modpack, report the link to the pack's author;
+normalasm.crashscreen.new.paragraph4.line2=otherwise, you're encouraged to report the link to the
+normalasm.crashscreen.new.paragraph4.line3=identified mod's author(s) to help them fix the issue.
+normalasm.crashscreen.new.paragraph4.line4=Since FermiumASM is installed, you can continue playing.
 
 normalasm.initerrorscreen.title=Minecraft failed to start!
 normalasm.initerrorscreen.summary=An error during startup prevented Minecraft from starting
@@ -29,6 +34,11 @@ normalasm.initerrorscreen.paragraph3.line1=Click the "Get link" button to open i
 normalasm.initerrorscreen.paragraph3.line2=encouraged to send this report to the mod's author to help
 normalasm.initerrorscreen.paragraph3.line3=them fix the issue. Unfortunately, it is not possible to keep
 normalasm.initerrorscreen.paragraph3.line4=loading Minecraft due to this error.
+
+normalasm.initerrorscreen.new.paragraph3.line1=If this is a modpack, report the link to the pack's author;
+normalasm.initerrorscreen.new.paragraph3.line2=otherwise, you're encouraged to report the link to the
+normalasm.initerrorscreen.new.paragraph3.line3=identified mod's author(s) to help them fix the issue.
+normalasm.initerrorscreen.new.paragraph3.line4=Unfortunately Minecraft can't load due to this error.
 
 normalasm.warnscreen.title=Potential problem found!
 normalasm.warnscreen.summary=Minecraft ran into a problem.
@@ -42,6 +52,15 @@ normalasm.warnscreen.paragraph3.line2=encouraged to send this report to the mod'
 normalasm.warnscreen.paragraph3.line3=them fix the issue. You can keep playing, but be aware that
 normalasm.warnscreen.paragraph3.line4=you will likely encounter some problems later on. This warning
 normalasm.warnscreen.paragraph3.line5=can be disabled in Mods > BlahajASM> Config > Crashes.
+
+normalasm.warnscreen.new.paragraph1.line1=Minecraft did not crash, but there may still be issues such
+normalasm.warnscreen.new.paragraph1.line2=as world corruption, broken features, or further crashes.
+normalasm.warnscreen.new.paragraph1.line3=Possible causes have been identified:
+normalasm.warnscreen.new.paragraph3.line1=If this is a modpack, report the link to the pack's author;
+normalasm.warnscreen.new.paragraph3.line2=otherwise, you're encouraged to report the link to the
+normalasm.warnscreen.new.paragraph3.line3=identified mod's author(s) to help them fix the issue.
+normalasm.warnscreen.new.paragraph3.line4=You can keep playing but may encounter errors. This warning
+normalasm.warnscreen.new.paragraph3.line5=can be disabled in Mods > FermiumASM > Config > Crashes.
 
 normalasm.notification.title.unknown=An unknown problem occured!
 normalasm.notification.title.mod=%s ran into a problem!
