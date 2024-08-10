@@ -34,4 +34,4 @@ jobs:
         with:
           name: jars
           path: |
-            **/build/libs/blahajasm-*.*.jar
+            **/build/libs/BlahajASM-*.*.jar
