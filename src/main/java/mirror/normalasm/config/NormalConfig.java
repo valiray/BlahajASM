@@ -79,7 +79,7 @@ public class NormalConfig {
     public boolean crashReportImprovements, crashReportUpdatedScreens, returnToMainMenuAfterCrash, rewriteLoggingWithDeobfuscatedNames, hideToastsAndContinuePlaying;
 
     private void initialize() {
-        configuration = new Configuration(new File(Launch.minecraftHome, "config" + File.separator + "blahajsasm.cfg"));
+        configuration = new Configuration(new File(Launch.minecraftHome, "config" + File.separator + "blahajasm.cfg"));
         load();
     }
 
