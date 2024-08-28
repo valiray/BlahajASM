@@ -1,10 +1,8 @@
 name: Manual Build
 
 on:
-  workflow_dispatch:
-    branches:
-      - 'master'
-
+  [workflow_dispatch, push]
+  
 jobs:
   build-gradle:
     runs-on: ubuntu-latest
