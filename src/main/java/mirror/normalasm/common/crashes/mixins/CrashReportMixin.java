@@ -13,8 +13,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -78,11 +76,6 @@ public abstract class CrashReportMixin implements ICrashReportSuspectGetter {
         builder.append("---- Minecraft Crash Report ----\n")
                 .append("// BlahajASM deobfuscated this stacktrace using MCP's stable-39 mappings.\n")
                 .append("// ").append(getWittyComment());
-        String blame = getFunnyBlame();
-        if (!blame.isEmpty()) {
-            builder.append("\n")
-                    .append("// ").append(blame);
-        }
 
         builder.append("\n\n")
                 .append("Time: ").append(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z").format(new Date())).append("\n")
@@ -109,14 +102,6 @@ public abstract class CrashReportMixin implements ICrashReportSuspectGetter {
             builder.append("\n");
         }
         systemDetailsCategory.appendToStringBuilder(builder);
-    }
-    private String getFunnyBlame() {
-        try {
-            if (Math.random() < 0.01 ) {
-                return "BlahajASM blames Rongmario OwO";
-            }
-        } catch (Throwable ignored) {}
-        return "";
     }
 
 }
