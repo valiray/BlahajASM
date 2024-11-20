@@ -142,8 +142,7 @@ public class NormalTransformer implements IClassTransformer {
         if (NormalConfig.instance.fixMC31681) {
             addTransformation("net.minecraft.client.renderer.EntityRenderer", this::fixMC31681);
         }
-        addTransformation("net.minecraft.nbt.NBTTagCompound", bytes -> nbtTagCompound$replaceDefaultHashMap(bytes, NormalConfig.instance.optimizeNBTTagCompoundBackingMap, NormalConfig.instance.nbtBackingMapStringCanonicalization));
-    }
+        addTransformation("net.minecraft.nbt.NBTTagCompound", bytes -> nbtTagCompound$replaceDefaultHashMap(bytes, NormalConfig.instance.optimizeNBTTagCompoundBackingMap, NormalConfig.instance.nbtBackingMapStringCanonicalization, NormalConfig.instance.optimizeNBTTagCompoundBackingMapOpenMap));    }
 
     public void addTransformation(String key, Function<byte[], byte[]> value) {
         NormalLogger.instance.info("Adding class {} to the transformation queue", key);
@@ -467,7 +466,7 @@ public class NormalTransformer implements IClassTransformer {
         return writer.toByteArray();
     }
 
-    private byte[] nbtTagCompound$replaceDefaultHashMap(byte[] bytes, boolean optimizeMap, boolean canonicalizeString) {
+    private byte[] nbtTagCompound$replaceDefaultHashMap(byte[] bytes, boolean optimizeMap, boolean canonicalizeString, boolean useOpenMap) {
         if (!optimizeMap && !canonicalizeString) {
             return bytes;
         }
@@ -481,9 +480,9 @@ public class NormalTransformer implements IClassTransformer {
                 while (iter.hasNext()) {
                     AbstractInsnNode instruction = iter.next();
                     if (instruction.getOpcode() == INVOKESTATIC) {
-                        iter.set(new TypeInsnNode(NEW, canonicalizeString ? "mirror/normalasm/api/datastructures/canonical/AutoCanonizingArrayMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectArrayMap"));
+                        iter.set(new TypeInsnNode(NEW, useOpenMap ? (canonicalizeString ? "mirror/normalasm/api/datastructures/canonical/AutoCanonizingOpenHashMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectOpenHashMap") : (canonicalizeString ? "mirror/normalasm/api/datastructures/canonical/AutoCanonizingArrayMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectArrayMap")));
                         iter.add(new InsnNode(DUP));
-                        iter.add(new MethodInsnNode(INVOKESPECIAL, canonicalizeString ? "mirror/normalasm/api/datastructures/canonical/AutoCanonizingArrayMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectArrayMap", "<init>", "()V", false));
+                        iter.add(new MethodInsnNode(INVOKESPECIAL, useOpenMap ? (canonicalizeString ? "mirror/normalasm/api/datastructures/canonical/AutoCanonizingOpenHashMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectOpenHashMap") : (canonicalizeString ? "mirror/normalasm/api/datastructures/canonical/AutoCanonizingArrayMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectArrayMap"), "<init>", "()V", false));
                         break;
                     }
                 }

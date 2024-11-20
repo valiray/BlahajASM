@@ -66,8 +66,7 @@ public class NormalConfig {
     public boolean cleanupLaunchClassLoaderEarly, cleanupLaunchClassLoaderLate, noResourceCache, noClassCache, weakResourceCache, weakClassCache, disablePackageManifestMap, cleanCachesOnGameLoad/*, cleanCachesOnWorldLoad*/;
     public boolean resourceLocationCanonicalization, modelConditionCanonicalization, nbtTagStringBackingStringCanonicalization, nbtBackingMapStringCanonicalization, packageStringCanonicalization, lockCodeCanonicalization, spriteNameCanonicalization, asmDataStringCanonicalization, vertexDataCanonicalization, filePermissionsCacheCanonicalization;
     public boolean optimizeFMLRemapper;
-    public boolean optimizeRegistries, optimizeNBTTagCompoundBackingMap, optimizeFurnaceRecipeStore, stripNearUselessItemStackFields, moreModelManagerCleanup, efficientHashing, replaceSearchTreeWithJEISearching;
-    public boolean releaseSpriteFramesCache, onDemandAnimatedTextures;
+    public boolean optimizeRegistries, optimizeNBTTagCompoundBackingMap, optimizeNBTTagCompoundBackingMapOpenMap, optimizeFurnaceRecipeStore, stripNearUselessItemStackFields, moreModelManagerCleanup, efficientHashing, replaceSearchTreeWithJEISearching;    public boolean releaseSpriteFramesCache, onDemandAnimatedTextures;
     public boolean optimizeSomeRendering, stripUnnecessaryLocalsInRenderHelper;
     public boolean quickerEnableUniversalBucketCheck, stripInstancedRandomFromSoundEventAccessor, classCaching, copyScreenshotToClipboard, releaseScreenshotCache, asyncScreenshot, removeExcessiveGCCalls, smoothDimensionChange, threadPriorityFix, outdatedCaCertsFix;
     public boolean fixBlockIEBaseArrayIndexOutOfBoundsException, cleanupChickenASMClassHierarchyManager, optimizeAmuletRelatedFunctions, labelCanonicalization, skipCraftTweakerRecalculatingSearchTrees, bwmBlastingOilOptimization, optimizeQMDBeamRenderer, repairEvilCraftEIOCompat, optimizeArcaneLockRendering, fixXU2CrafterCrash, disableXU2CrafterRendering, fixTFCFallingBlockFalseStartingTEPos;
@@ -117,6 +116,7 @@ public class NormalConfig {
         // optimizeDataStructures = getBoolean("optimizeDataStructures", "datastructures", "Optimizes various data structures around Minecraft", true);
         optimizeRegistries = getBoolean("optimizeRegistries", "datastructures", "Optimizes registries", true);
         optimizeNBTTagCompoundBackingMap = getBoolean("optimizeNBTTagCompoundBackingMap", "datastructures", "Optimize NBTTagCompound's backing map structure", true);
+        optimizeNBTTagCompoundBackingMapOpenMap = getBoolean("optimizeNBTTagCompoundBackingMapOpenMap", "datastructures", "If optimizeNBTTagCompoundBackingMap or nbtBackingMapStringCanonicalization is true, uses an Object2ObjectOpenHashMap instead of an Object2ObjectArrayMap", true);
         optimizeFurnaceRecipeStore = getBoolean("optimizeFurnaceRecipeStore", "datastructures", "Optimizing FurnaceRecipes. FastFurnace will see very little benefit when this option is turned on", true);
         stripNearUselessItemStackFields = getBoolean("stripNearUselessItemStackFields", "datastructures", "EXPERIMENTAL: Strips ItemStack of some of its fields as it stores some near-useless references", true);
         moreModelManagerCleanup = getBoolean("moreModelManagerCleanup", "datastructures", "Clears and trims ModelManager data structures after models are loaded and baked", true);
