@@ -21,3 +21,9 @@ Significant changes from CensoredASM:
 As with the original, BlahajASM is incompatible with VanillaFix and TexFix as their functionalities have been improved and added directly to the mod.
 
 Due to the changes made in this mod, if you have any issues, please report them to the linked issue tracker at the top for [BlahajASM](https://github.com/valiray/BlahajASM/issues), not the original mod.
+
+**IMPORTANT:**<br>
+**BlahajASM is a fork of [FermiumASM by fonnymunkey](https://github.com/fonnymunkey/FermiumASM) Which is a fork for removing the need for the ;**<br>
+**FermiumASM is a fork of [NormalASM by skmedix](https://github.com/skmedix/NormalASM) licensed LGPLv2.1;**<br>
+**Which is an updated fork of [NormalASM by mirrorcult](https://github.com/mirrorcult/NormalASM) licensed LGPLv2.1;**<br>
+**Which is a fork for rebranding to remove "questionable" content of [L**iASM/CensoredASM by Rongmario](https://github.com/LoliKingdom/LoliASM) licensed LGPLv2.1.**
