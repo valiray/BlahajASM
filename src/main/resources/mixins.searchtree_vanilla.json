@@ -1,6 +1,6 @@
 {
-  "package": "mirror.normalasm.client.searchtree.mixins.vanilla",
-  "refmap": "mixins.normalasm.refmap.json",
+  "package": "mirror.blahajasm.client.searchtree.mixins.vanilla",
+  "refmap": "mixins.blahajasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

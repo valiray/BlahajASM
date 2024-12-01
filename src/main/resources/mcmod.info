@@ -1,6 +1,6 @@
 [
 {
-  "modid": "normalasm",
+  "modid": "blahajasm",
   "name": "BlahajASM",
   "description": "Blahaj has bytecode manipulated your game. :3",
   "version": "${version}",
@@ -8,7 +8,7 @@
   "url": "https://github.com/valiray/BlahajASM",
   "updateUrl": "",
   "authorList": ["Rongmario", "mirrorcult", "skmedix", "fonnymunkey", "Valiray"],
-  "logoFile": "assets/normalasm/blahajasm.png",
+  "logoFile": "assets/blahajasm/blahajasm.png",
   "screenshots": [],
   "dependencies": []
 }

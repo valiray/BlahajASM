@@ -1,6 +1,6 @@
 {
-  "package": "mirror.normalasm.client.models.bucket.mixins",
-  "refmap": "mixins.normalasm.refmap.json",
+  "package": "mirror.blahajasm.client.models.bucket.mixins",
+  "refmap": "mixins.blahajasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

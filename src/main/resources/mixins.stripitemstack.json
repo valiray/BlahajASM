@@ -1,6 +1,6 @@
 {
-  "package": "mirror.normalasm.common.stripitemstack.mixins",
-  "refmap": "mixins.normalasm.refmap.json",
+  "package": "mirror.blahajasm.common.stripitemstack.mixins",
+  "refmap": "mixins.blahajasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
