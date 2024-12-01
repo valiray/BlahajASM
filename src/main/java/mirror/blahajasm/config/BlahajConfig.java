@@ -109,7 +109,7 @@ public class BlahajConfig {
         spriteNameCanonicalization = getBoolean("spriteNameCanonicalization", "canonicalization", "Deduplicate TextureAtlasSprite's names", true);
         asmDataStringCanonicalization = getBoolean("asmDataStringCanonicalization", "canonicalization", "Deduplicate ASMData related Strings", true);
         vertexDataCanonicalization = getBoolean("vertexDataCanonicalization", "canonicalization", "EXPERIMENTAL: Deduplicate BakedQuad's Vertex Data array. If you see any artifacting in-game, turn this off and report it on github", true);
-        filePermissionsCacheCanonicalization = getBoolean("filePermissionsCacheCanonicalization", "canonicalization", "Deduplicate Java's FilePermission cache's names within SecureClassLoader", true);
+        filePermissionsCacheCanonicalization = getBoolean("filePermissionsCacheCanonicalization", "canonicalization", "Deduplicate Java's FilePermission cache's names within SecureClassLoader", false);
 
         optimizeFMLRemapper = getBoolean("optimizeFMLRemapper", "remapper", "Optimizing Forge's Remapper for not storing redundant entries", true);
 
