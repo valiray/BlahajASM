@@ -7,7 +7,7 @@ blahajasm.gui.disabledByConfig=Disabled by config
 blahajasm.crashscreen.title=Minecraft crashed!
 blahajasm.crashscreen.summary=Minecraft ran into a problem and crashed.
 blahajasm.crashscreen.unknownCause=Unknown
-blahajasm.crashscreen.identificationErrored=[Error identifying, report toBlahajASM]
+blahajasm.crashscreen.identificationErrored=[Error identifying, report to BlahajASM]
 blahajasm.crashscreen.reportSaveFailed=[Error saving report, see log]
 
 blahajasm.crashscreen.paragraph1.line1=The following mod(s) have been identified as potential causes:
@@ -25,7 +25,7 @@ blahajasm.crashscreen.new.paragraph3.line2=saved with this name in your crash fo
 blahajasm.crashscreen.new.paragraph4.line1=If this is a modpack, report the link to the pack's author;
 blahajasm.crashscreen.new.paragraph4.line2=otherwise, you're encouraged to report the link to the
 blahajasm.crashscreen.new.paragraph4.line3=identified mod's author(s) to help them fix the issue.
-blahajasm.crashscreen.new.paragraph4.line4=Since FermiumASM is installed, you can continue playing.
+blahajasm.crashscreen.new.paragraph4.line4=Since BlahajASM is installed, you can continue playing.
 
 blahajasm.initerrorscreen.title=Minecraft failed to start!
 blahajasm.initerrorscreen.summary=An error during startup prevented Minecraft from starting
@@ -60,7 +60,7 @@ blahajasm.warnscreen.new.paragraph3.line1=If this is a modpack, report the link 
 blahajasm.warnscreen.new.paragraph3.line2=otherwise, you're encouraged to report the link to the
 blahajasm.warnscreen.new.paragraph3.line3=identified mod's author(s) to help them fix the issue.
 blahajasm.warnscreen.new.paragraph3.line4=You can keep playing but may encounter errors. This warning
-blahajasm.warnscreen.new.paragraph3.line5=can be disabled in Mods > FermiumASM > Config > Crashes.
+blahajasm.warnscreen.new.paragraph3.line5=can be disabled in Mods > BlahajASM > Config > Crashes.
 
 blahajasm.notification.title.unknown=An unknown problem occured!
 blahajasm.notification.title.mod=%s ran into a problem!
