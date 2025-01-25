@@ -142,8 +142,8 @@ public class BlahajTransformer implements IClassTransformer {
         if (BlahajConfig.instance.fixMC31681) {
             addTransformation("net.minecraft.client.renderer.EntityRenderer", this::fixMC31681);
         }
-        addTransformation("net.minecraft.nbt.NBTTagCompound", bytes -> nbtTagCompound$replaceDefaultHashMap(bytes, BlahajConfig.instance.optimizeNBTTagCompoundBackingMap, BlahajConfig.instance.nbtBackingMapStringCanonicalization, BlahajConfig.instance.optimizeNBTTagCompoundBackingMapOpenMap));    }
-
+        addTransformation("net.minecraft.nbt.NBTTagCompound", bytes -> nbtTagCompound$replaceDefaultHashMap(bytes, BlahajConfig.instance.optimizeNBTTagCompoundBackingMap, BlahajConfig.instance.optimizeNBTTagCompoundMapThreshold, BlahajConfig.instance.nbtBackingMapStringCanonicalization));
+    }
     public void addTransformation(String key, Function<byte[], byte[]> value) {
         BlahajLogger.instance.info("Adding class {} to the transformation queue", key);
         transformations.put(key, value);
@@ -466,8 +466,8 @@ public class BlahajTransformer implements IClassTransformer {
         return writer.toByteArray();
     }
 
-    private byte[] nbtTagCompound$replaceDefaultHashMap(byte[] bytes, boolean optimizeMap, boolean canonicalizeString, boolean useOpenMap) {
-        if (!optimizeMap && !canonicalizeString) {
+    private byte[] nbtTagCompound$replaceDefaultHashMap(byte[] bytes, boolean optimizeMap, int mapThreshold, boolean canonicalizeString) {
+        if ((!optimizeMap || mapThreshold == 0) && !canonicalizeString) {
             return bytes;
         }
         ClassReader reader = new ClassReader(bytes);
@@ -480,15 +480,14 @@ public class BlahajTransformer implements IClassTransformer {
                 while (iter.hasNext()) {
                     AbstractInsnNode instruction = iter.next();
                     if (instruction.getOpcode() == INVOKESTATIC) {
-                        iter.set(new TypeInsnNode(NEW, useOpenMap ? (canonicalizeString ? "mirror/blahajasm/api/datastructures/canonical/AutoCanonizingOpenHashMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectOpenHashMap") : (canonicalizeString ? "mirror/blahajasm/api/datastructures/canonical/AutoCanonizingArrayMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectArrayMap")));
-                        iter.add(new InsnNode(DUP));
-                        iter.add(new MethodInsnNode(INVOKESPECIAL, useOpenMap ? (canonicalizeString ? "mirror/blahajasm/api/datastructures/canonical/AutoCanonizingOpenHashMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectOpenHashMap") : (canonicalizeString ? "mirror/blahajasm/api/datastructures/canonical/AutoCanonizingArrayMap" : "it/unimi/dsi/fastutil/objects/Object2ObjectArrayMap"), "<init>", "()V", false));
+                        iter.set(new TypeInsnNode(NEW, "mirror/blahajasm/api/datastructures/TagMap"));                        iter.add(new InsnNode(DUP));
+                        iter.add(new MethodInsnNode(INVOKESPECIAL, "mirror/blahajasm/api/datastructures/TagMap", "<init>", "()V", false));
                         break;
                     }
                 }
+                break;
             }
         }
-
         ClassWriter writer = new ClassWriter(ClassWriter.COMPUTE_FRAMES);
         node.accept(writer);
         return writer.toByteArray();
