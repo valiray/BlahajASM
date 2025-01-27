@@ -67,6 +67,7 @@ public class NormalConfig {
     public boolean resourceLocationCanonicalization, modelConditionCanonicalization, nbtTagStringBackingStringCanonicalization, nbtBackingMapStringCanonicalization, packageStringCanonicalization, lockCodeCanonicalization, spriteNameCanonicalization, asmDataStringCanonicalization, vertexDataCanonicalization, filePermissionsCacheCanonicalization;
     public boolean optimizeFMLRemapper;
     public boolean optimizeRegistries, optimizeNBTTagCompoundBackingMap, optimizeNBTTagCompoundBackingMapOpenMap, optimizeFurnaceRecipeStore, stripNearUselessItemStackFields, moreModelManagerCleanup, efficientHashing, replaceSearchTreeWithJEISearching;    public boolean releaseSpriteFramesCache, onDemandAnimatedTextures;
+    public int optimizeNBTTagCompoundMapThreshold;
     public boolean optimizeSomeRendering, stripUnnecessaryLocalsInRenderHelper;
     public boolean quickerEnableUniversalBucketCheck, stripInstancedRandomFromSoundEventAccessor, classCaching, copyScreenshotToClipboard, releaseScreenshotCache, asyncScreenshot, removeExcessiveGCCalls, smoothDimensionChange, threadPriorityFix, outdatedCaCertsFix;
     public boolean fixBlockIEBaseArrayIndexOutOfBoundsException, cleanupChickenASMClassHierarchyManager, optimizeAmuletRelatedFunctions, labelCanonicalization, skipCraftTweakerRecalculatingSearchTrees, bwmBlastingOilOptimization, optimizeQMDBeamRenderer, repairEvilCraftEIOCompat, optimizeArcaneLockRendering, fixXU2CrafterCrash, disableXU2CrafterRendering, fixTFCFallingBlockFalseStartingTEPos;
@@ -116,6 +117,7 @@ public class NormalConfig {
         // optimizeDataStructures = getBoolean("optimizeDataStructures", "datastructures", "Optimizes various data structures around Minecraft", true);
         optimizeRegistries = getBoolean("optimizeRegistries", "datastructures", "Optimizes registries", true);
         optimizeNBTTagCompoundBackingMap = getBoolean("optimizeNBTTagCompoundBackingMap", "datastructures", "Optimize NBTTagCompound's backing map structure", true);
+        optimizeNBTTagCompoundMapThreshold = getInteger("optimizeNBTTagCompoundMapThreshold", "datastructures", "Max size NBTTagCompounds backing map can get before it gets changed to HashMap from ArrayMap", 5);
         optimizeNBTTagCompoundBackingMapOpenMap = getBoolean("optimizeNBTTagCompoundBackingMapOpenMap", "datastructures", "If optimizeNBTTagCompoundBackingMap or nbtBackingMapStringCanonicalization is true, uses an Object2ObjectOpenHashMap instead of an Object2ObjectArrayMap", true);
         optimizeFurnaceRecipeStore = getBoolean("optimizeFurnaceRecipeStore", "datastructures", "Optimizing FurnaceRecipes. FastFurnace will see very little benefit when this option is turned on", true);
         stripNearUselessItemStackFields = getBoolean("stripNearUselessItemStackFields", "datastructures", "EXPERIMENTAL: Strips ItemStack of some of its fields as it stores some near-useless references", true);
@@ -191,7 +193,7 @@ public class NormalConfig {
         if (classes.add(clazz.getName())) {
             prop.set(classes.toArray(new String[0]));
             configuration.save();
-            NormalLogger.instance.warn("{} added to classesThatCallBakedQuadCtor list in normalasm.cfg", clazz.getName());
+            NormalLogger.instance.warn("{} added to classesThatCallBakedQuadCtor list in blahajasm.cfg", clazz.getName());
         }
         if(NormalConfig.instance.bakedQuadDynaTreeCompat) dynaTreeCompatCheck();
     }
@@ -206,7 +208,7 @@ public class NormalConfig {
                 classes.add("com.ferreusveritas.dynamictrees.client.QuadManipulator")) {
             prop.set(classes.toArray(new String[0]));
             configuration.save();
-            NormalLogger.instance.warn("BakedQuadDynaTreeCompat corrected classesThatCallBakedQuadCtor list in normalasm.cfg");
+            NormalLogger.instance.warn("BakedQuadDynaTreeCompat corrected classesThatCallBakedQuadCtor list in blahajasm.cfg");
         }
     }
 
@@ -216,7 +218,7 @@ public class NormalConfig {
         if (classes.add(clazz.getName())) {
             prop.set(classes.toArray(new String[0]));
             configuration.save();
-            NormalLogger.instance.warn("{} added to classesThatExtendBakedQuad list in normalasm.cfg", clazz.getName());
+            NormalLogger.instance.warn("{} added to classesThatExtendBakedQuad list in blahajasm.cfg", clazz.getName());
         }
     }
 
@@ -242,6 +244,15 @@ public class NormalConfig {
         return prop.getBoolean(defaultValue);
     }
 
+    private int getInteger(String name, String category, String description, int defaultValue) {
+        Property prop = configuration.get(category, name, defaultValue);
+        prop.setDefaultValue(defaultValue);
+        prop.setComment(description + " - <default: " + defaultValue + ">");
+        prop.setRequiresMcRestart(true);
+        prop.setShowInGui(true);
+        prop.setLanguageKey("normalasm.config." + name);
+        return prop.getInt(defaultValue);
+    }
     private String[] getStringArray(String name, String category, String description, String... defaultValue) {
         Property prop = configuration.get(category, name, defaultValue);
         prop.setDefaultValues(defaultValue);

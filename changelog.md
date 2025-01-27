@@ -12,7 +12,7 @@
 - Canonicalize strings by using Java's String#intern. This utilizes Java's own implementation and as of Java 7 through 8, it has gotten better. Where using it is probably better than a custom structure.
 - Now uses Forge's own config, but because of earlier-loading, it is manually baked.
 - Deprecated old json config system.
-- More config options! Check your new configs: `normalasm.cfg`
+- More config options! Check your new configs: `blahajasm.cfg`
     - Launchwrapper optimizations into more specific configuration settings.
     - Modfixes are now more specific too.
 - NBTTagString objects now have their strings canonicalized.
