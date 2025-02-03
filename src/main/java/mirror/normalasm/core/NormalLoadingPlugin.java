@@ -30,7 +30,7 @@ import java.util.zip.ZipFile;
 @IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
 public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
-    public static final String VERSION = "5.20.1";
+    public static final String VERSION = "5.23";
 
     public static final boolean isDeobf = FMLLaunchHandler.isDeobfuscatedEnvironment();
 
@@ -182,8 +182,6 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                     return NormalConfig.instance.moreModelManagerCleanup;
                 case "mixins.screenshot.json":
                     return NormalConfig.instance.releaseScreenshotCache || NormalConfig.instance.asyncScreenshot;
-                case "mixins.ondemand_sprites.json":
-                    return NormalConfig.instance.onDemandAnimatedTextures;
                 case "mixins.resolve_mc2071.json":
                     return NormalConfig.instance.resolveMC2071;
                 case "mixins.fix_mc_skindownloading.json":

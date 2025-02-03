@@ -1,6 +1,6 @@
 {
   "package": "mirror.normalasm.client.sprite.ondemand.mixins",
-  "plugin": "mirror.normalasm.core.NormalMixinPlugin",
+  "plugin": "mirror.normalasm.core.SpriteMixinPlugin",
   "refmap": "mixins.normalasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
