@@ -20,7 +20,9 @@ public class NormalLateMixinLoader implements ILateMixinLoader {
                 "mixins.modfixes_ebwizardry.json",
                 "mixins.modfixes_xu2.json",
                 "mixins.modfixes_b3m.json",
-                "mixins.searchtree_mod.json");
+                "mixins.searchtree_mod.json",
+                "mixins.modfixes_railcraft.json",
+                "mixins.modfixes_disable_broken_particles.json");
     }
 
     @Override
@@ -45,6 +47,10 @@ public class NormalLateMixinLoader implements ILateMixinLoader {
                 return NormalConfig.instance.fixAmuletHolderCapability && Loader.isModLoaded("astralsorcery");
             case "mixins.modfixes_b3m.json":
                 return NormalConfig.instance.resourceLocationCanonicalization && Loader.isModLoaded("B3M"); // Stupid
+            case "mixins.modfixes_railcraft.json":
+                return NormalConfig.instance.efficientHashing && Loader.isModLoaded("railcraft");
+                case "mixins.modfixes_disable_broken_particles.json":
+                return NormalConfig.instance.disableBrokenParticles;
         }
         return false;
     }
