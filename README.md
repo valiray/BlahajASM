@@ -24,9 +24,9 @@ Cleanroom compatablity
 
 <details>
 <summary>Spoiler</summary>
-Add "mirror.blahajasm.BlahajReflector" and "mirror.blahajasm.common.crashes.ModIdentifier" to "Launch Wrapper API Change Patching List" in fugue.cfg
+Add "mirror.normalasm.NormalReflector" and "mirror.normalasm.common.crashes.ModIdentifier" to "Launch Wrapper API Change Patching List" in fugue.cfg
 
-Also add "mirror.blahajasm.common.crashes.ModIdentifier" to "getCodeSource() Patching List" in fugue.cfg
+Also add "mirror.normalasm.common.crashes.ModIdentifier" to "getCodeSource() Patching List" in fugue.cfg
 
 </details>
 
