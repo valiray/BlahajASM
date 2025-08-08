@@ -22,7 +22,8 @@ import static org.objectweb.asm.Opcodes.*;
 
 public class NormalTransformer implements IClassTransformer {
 
-    public static boolean isOptifineInstalled, isSodiumPortInstalled;    public static boolean squashBakedQuads = NormalConfig.instance.squashBakedQuads;
+    public static boolean isOptifineInstalled, isSodiumPortInstalled, isCeleritasInstalled;
+    public static boolean squashBakedQuads = NormalConfig.instance.squashBakedQuads;
 
     Multimap<String, Function<byte[], byte[]>> transformations;
 
@@ -30,6 +31,7 @@ public class NormalTransformer implements IClassTransformer {
         NormalLogger.instance.info("BlahajASM is now preparing to bytecode manipulate your game.:3");
         isOptifineInstalled = NormalReflector.doesClassExist("optifine.OptiFineForgeTweaker");
         isSodiumPortInstalled = NormalReflector.doesClassExist("me.jellysquid.mods.sodium.client.SodiumMixinTweaker");
+        isCeleritasInstalled = NormalReflector.doesClassExist("org.taumc.celeritas.core.CeleritasLoadingPlugin");
         if (squashBakedQuads) {
             if (isOptifineInstalled) {
                 squashBakedQuads = false;

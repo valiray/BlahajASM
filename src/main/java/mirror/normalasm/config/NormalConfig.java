@@ -84,7 +84,7 @@ public class NormalConfig {
     }
 
     public void load() {
-        squashBakedQuads = getBoolean("squashBakedQuads", "bakedquad", "Saves RAM by removing BakedQuad instance variables, redirecting BakedQuad creation to specific BakedQuad child classes. This will be forcefully turned off when Optifine is installed as it is incompatible", true);
+        squashBakedQuads = getBoolean("squashBakedQuads", "bakedquad", "Saves RAM by removing BakedQuad instance variables, redirecting BakedQuad creation to specific BakedQuad child classes. This will be forcefully turned off when Optifine is installed as it is incompatible. this causes issues with cleanroom and has been disabled due to this", false);
         classesThatCallBakedQuadCtor = getStringArray("classesThatCallBakedQuadCtor", "bakedquad", "Classes where BakedQuad::new calls need to be redirected. As of 3.2, this should be done automatically, while the changes will show in the next launch", "net.minecraft.client.renderer.block.model.FaceBakery");
         classesThatExtendBakedQuad = getStringArray("classesThatExtendBakedQuad", "bakedquad", "Classes that extend BakedQuad need to be handled separately. This should be done automatically, while the changes will show in the next launch", "");
         logClassesThatCallBakedQuadCtor = getBoolean("logClassesThatCallBakedQuadCtor", "bakedquad", "Log classes that need their BakedQuad::new calls redirected", true);

@@ -26,26 +26,23 @@ public class SpriteMixinPlugin implements IMixinConfigPlugin {
             return this.shouldApply;
         }
         this.shouldApply = NormalConfig.instance.onDemandAnimatedTextures;
-
-
         if (this.shouldApply) {
-
-
             if (NormalTransformer.isOptifineInstalled) {
+                this.shouldApply = false;
+                    NormalLogger.instance.error("Optifine is installed. onDemandAnimatedTextures won't be activated as Optifine already has Smart Animations.");
+            }
+
+            if (NormalTransformer.isCeleritasInstalled) {
 
 
                 this.shouldApply = false;
 
 
-                    NormalLogger.instance.error("Optifine is installed. onDemandAnimatedTextures won't be activated as Optifine already has Smart Animations.");
+                NormalLogger.instance.error("Celeritas is installed. onDemandAnimatedTextures won't be activated as Celeritas has similar optimizations.");
 
 
             }
-
-
         }
-
-
         return this.shouldApply;
     }
     @Override
