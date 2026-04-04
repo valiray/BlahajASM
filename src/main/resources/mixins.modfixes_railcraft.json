@@ -1,6 +1,6 @@
 {
   "package": "mirror.normalasm.common.modfixes.railcraft.mixins",
-  "refmap": "mixins.loliasm.refmap.json",
+  "refmap": "mixins.normalasm.refmap.json",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",

@@ -69,8 +69,8 @@ public class NormalConfig {
     public boolean optimizeRegistries, optimizeNBTTagCompoundBackingMap, optimizeNBTTagCompoundBackingMapOpenMap, optimizeFurnaceRecipeStore, stripNearUselessItemStackFields, moreModelManagerCleanup, efficientHashing, replaceSearchTreeWithJEISearching;    public boolean releaseSpriteFramesCache, onDemandAnimatedTextures;
     public int optimizeNBTTagCompoundMapThreshold;
     public boolean optimizeSomeRendering, stripUnnecessaryLocalsInRenderHelper;
-    public boolean quickerEnableUniversalBucketCheck, stripInstancedRandomFromSoundEventAccessor, classCaching, copyScreenshotToClipboard, releaseScreenshotCache, asyncScreenshot, removeExcessiveGCCalls, smoothDimensionChange, threadPriorityFix, outdatedCaCertsFix;
-    public boolean fixBlockIEBaseArrayIndexOutOfBoundsException, cleanupChickenASMClassHierarchyManager, optimizeAmuletRelatedFunctions, labelCanonicalization, skipCraftTweakerRecalculatingSearchTrees, bwmBlastingOilOptimization, optimizeQMDBeamRenderer, repairEvilCraftEIOCompat, optimizeArcaneLockRendering, fixXU2CrafterCrash, disableXU2CrafterRendering, fixTFCFallingBlockFalseStartingTEPos, disableBrokenParticles;
+    public boolean quickerEnableUniversalBucketCheck, stripInstancedRandomFromSoundEventAccessor, classCaching, copyScreenshotToClipboard, releaseScreenshotCache, asyncScreenshot, removeExcessiveGCCalls, smoothDimensionChange, threadPriorityFix, outdatedCaCertsFix, f3MenuLogging;
+    public boolean fixBlockIEBaseArrayIndexOutOfBoundsException, cleanupChickenASMClassHierarchyManager, optimizeAmuletRelatedFunctions, labelCanonicalization, skipCraftTweakerRecalculatingSearchTrees, bwmBlastingOilOptimization, optimizeQMDBeamRenderer, repairEvilCraftEIOCompat, optimizeArcaneLockRendering, fixXU2CrafterCrash, disableXU2CrafterRendering, fixTFCFallingBlockFalseStartingTEPos, disableBrokenParticles, optimizeCraftTweakerNBTConverter;
     public boolean fixAmuletHolderCapability, delayItemStackCapabilityInit;
     public boolean fixFillBucketEventNullPointerException, fixTileEntityOnLoadCME, removeForgeSecurityManager, fasterEntitySpawnPreparation, fixDimensionTypesInliningCrash;
     public boolean fixMC30845, fixMC31681, fixMC88176, fixMC129057, fixMC129556, fixMC186052, resolveMC2071, limitSkinDownloadingThreads;
@@ -140,6 +140,7 @@ public class NormalConfig {
         smoothDimensionChange = getBoolean("smoothDimensionChange", "misc", "Allows changing of dimensions to be smooth and nearly instantaneous, inspired by VanillaFix", true);
         threadPriorityFix = getBoolean("threadPriorityFix", "misc", "Adjust thread priorities to improve performance on systems with few cores", true);
         outdatedCaCertsFix = getBoolean("outdatedCaCertsFix", "misc", "Use updated CA Certs that was included in 8u311. This most notably fixes 8u51 certs issues", true);
+        f3MenuLogging = getBoolean("f3MenuLogging", "misc","Adds \"strings processed\" and \"vertex data array processed\" to the F3 menu", true);
 
         fixBlockIEBaseArrayIndexOutOfBoundsException = getBoolean("fixBlockIEBaseArrayIndexOutOfBoundsException", "modfixes", "When Immersive Engineering is installed, sometimes it or it's addons can induce an ArrayIndexOutOfBoundsException in BlockIEBase#getPushReaction. This option will be ignored when IE isn't installed", true);
         cleanupChickenASMClassHierarchyManager = getBoolean("cleanupChickenASMClassHierarchyManager", "modfixes", "EXPERIMENTAL: When ChickenASM (Library of CodeChickenLib and co.) is installed, ClassHierarchyManager can cache a lot of Strings and seem to be unused in any transformation purposes. This clears ClassHierarchyManager of those redundant strings. This option will be ignored when ChickenASM isn't installed", true);
@@ -154,6 +155,7 @@ public class NormalConfig {
         disableXU2CrafterRendering = getBoolean("disableXU2CrafterRendering", "modfixes", "When Extra Utilities 2 is installed, disable the crafter's rendering of the item being crafted, this can reduce lag, ignores fixXU2CrafterCrash config option", false);
         fixTFCFallingBlockFalseStartingTEPos = getBoolean("fixTFCFallingBlockFalseStartingTEPos", "modfixes", "When TerraFirmaCraft is installed, fix the falling block's false starting position ", true);
         disableBrokenParticles = getBoolean("disableBrokenParticles", "modfixes", "When various mods are installed and their blocks have broken particles, this tweak disables it.", true);
+        optimizeCraftTweakerNBTConverter = getBoolean("optimizeCraftTweakerNBTConverter", "modfixes", "When CraftTweaker is installed, optimize the backing map structure used by the NBT converter to use the same one that optimizeNBTTagCompoundBackingMap uses. This depends on the optimizeNBTTagCompoundBackingMap option to also be enabled.", true);
 
         fixAmuletHolderCapability = getBoolean("fixAmuletHolderCapability", "capability", "Fixes Astral Sorcery applying AmuletHolderCapability to large amount of ItemStacks when it isn't needed. This option will be ignored when Astral Sorcery isn't installed", true);
         delayItemStackCapabilityInit = getBoolean("delayItemStackCapabilityInit", "capability", "Delays ItemStack's capabilities from being initialized until they needed to be", true);

@@ -35,10 +35,10 @@ public class NormalTransformer implements IClassTransformer {
         if (squashBakedQuads) {
             if (isOptifineInstalled) {
                 squashBakedQuads = false;
-                NormalLogger.instance.info("Optifine is installed. BakedQuads won't be squashed as it is incompatible with OptiFine.");
-            } else if (isSodiumPortInstalled) {
+                NormalLogger.instance.error("Optifine is installed. BakedQuads won't be squashed as it is incompatible with OptiFine.");
+            } else if (isSodiumPortInstalled || isCeleritasInstalled) {
                 squashBakedQuads = false;
-                NormalLogger.instance.info("A sodium port is installed. BakedQuads won't be squashed as it is incompatible with Sodium.");
+                NormalLogger.instance.error("A sodium port is installed. BakedQuads won't be squashed as it is incompatible with Sodium.");
             }
             }
         transformations = MultimapBuilder.hashKeys(30).arrayListValues(1).build();
