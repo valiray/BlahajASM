@@ -266,7 +266,8 @@ public final class BakedQuadClassFactory {
                         // Solution found:
                         // No need to COMPUTE_FRAMES!
 
-                        Class clazz = NormalReflector.defineClass(Launch.classLoader, className.replace('/', '.'), classBytes);
+                        //Class clazz = NormalReflector.defineClass(Launch.classLoader, className.replace('/', '.'), classBytes);
+                        NormalReflector.defineMixinClass(className.replace('/', '.'), classBytes);
                     } catch (Throwable t) {
                         t.printStackTrace();
                     }

@@ -18,19 +18,9 @@ import java.net.URL;
 import java.net.URI;
 import java.util.*;
 
+import static mirror.normalasm.common.java.JavaVersionHelper.IS_JAVA_9_OR_NEWER;
+
 public class ModIdentifier {
-
-    private static final boolean IS_JAVA_9_OR_NEWER = determineIsJava9OrNewer();
-
-    private static boolean determineIsJava9OrNewer() {
-        try {
-            String version = System.getProperty("java.version");
-            return !version.startsWith("1.");
-        } catch (Exception e) {
-            NormalLogger.instance.error("Failed to determine Java version, assuming Java 8 compatibility.", e);
-            return false;
-        }
-    }
 
     public static Set<ModContainer> identifyFromStacktrace(Throwable e) {
         Map<File, Set<ModContainer>> modMap = makeModMap();

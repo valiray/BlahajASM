@@ -22,7 +22,8 @@ public class NormalLateMixinLoader implements ILateMixinLoader {
                 "mixins.modfixes_b3m.json",
                 "mixins.searchtree_mod.json",
                 "mixins.modfixes_railcraft.json",
-                "mixins.modfixes_disable_broken_particles.json");
+                "mixins.modfixes_disable_broken_particles.json",
+                "mixins.modfixes_crafttweaker.json");
     }
 
     @Override
@@ -51,6 +52,11 @@ public class NormalLateMixinLoader implements ILateMixinLoader {
                 return NormalConfig.instance.efficientHashing && Loader.isModLoaded("railcraft");
                 case "mixins.modfixes_disable_broken_particles.json":
                 return NormalConfig.instance.disableBrokenParticles;
+            case "mixins.modfixes_crafttweaker.json":
+                boolean optimizeMap = NormalConfig.instance.optimizeNBTTagCompoundBackingMap;
+                int mapThreshold = NormalConfig.instance.optimizeNBTTagCompoundMapThreshold;
+                boolean canonicalizeString = NormalConfig.instance.nbtBackingMapStringCanonicalization;
+                return ((optimizeMap && mapThreshold > 0) || canonicalizeString) && NormalConfig.instance.optimizeCraftTweakerNBTConverter && Loader.isModLoaded("crafttweaker");
         }
         return false;
     }

@@ -3,6 +3,7 @@ package mirror.normalasm.api;
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
+import mirror.normalasm.config.NormalConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -99,7 +100,7 @@ public class NormalStringPool {
     @SubscribeEvent
     public static void onDebugList(RenderGameOverlayEvent.Text event) {
         Minecraft minecraft = Minecraft.getMinecraft();
-        if (minecraft.gameSettings.showDebugInfo) {
+        if (minecraft.gameSettings.showDebugInfo && NormalConfig.instance.f3MenuLogging) {
             ArrayList<String> list = event.getLeft();
             if (!list.get(list.size() - 1).equals("")) {
                 list.add("");
