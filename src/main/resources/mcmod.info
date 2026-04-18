@@ -7,7 +7,7 @@
   "mcversion": "${mcversion}",
   "url": "https://github.com/valiray/BlahajASM",
   "updateUrl": "",
-  "authorList": ["Rongmario", "mirrorcult", "skmedix", "fonnymunkey", "Valiray"],
+  "authorList": ["Valiray", "fonnymunkey", "mirrorcult", "skmedix", "Rongmario"],
   "logoFile": "assets/normalasm/blahajasm.png",
   "screenshots": [],
   "dependencies": []
