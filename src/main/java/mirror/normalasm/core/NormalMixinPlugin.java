@@ -30,10 +30,12 @@ public class NormalMixinPlugin implements IMixinConfigPlugin {
         switch (mixinClassName) {
             case "mirror.normalasm.common.forgefixes.mixins.ChunkMixin":
                 return NormalConfig.instance.fixTileEntityOnLoadCME;
-            case "mirror.normalasm.common.forgefixes.mixins.EntityEntryMixin":
-                return NormalConfig.instance.fasterEntitySpawnPreparation;
             case "mirror.normalasm.common.forgefixes.mixins.DimensionTypeMixin":
                 return NormalConfig.instance.fixDimensionTypesInliningCrash;
+            case "mirror.normalasm.common.forgefixes.mixins.EntityEntryMixin":
+                return NormalConfig.instance.fasterEntitySpawnPreparation;
+            case "mirror.normalasm.common.forgefixes.mixins.ForgeEventFactoryMixin":
+                return NormalConfig.instance.fixFillBucketEventNullPointerException;
             case "mirror.normalasm.client.screenshot.mixins.MinecraftMixin":
                 return NormalConfig.instance.copyScreenshotToClipboard;
             case "mirror.normalasm.client.screenshot.mixins.ScreenShotHelperMixin":

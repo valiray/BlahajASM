@@ -229,21 +229,7 @@ public class ModIdentifier {
             if (mod instanceof MinecraftDummyContainer || mod instanceof FMLContainer) {
                 continue;
             }
-
-            File source = mod.getSource();
-            if (source == null) {
-                NormalLogger.instance.warn("Mod {} ({}) has a null source file, cannot map it.", mod.getModId(), mod.getName());
-                continue;
-            }
-
-            try {
-                File canonicalSource = source.getCanonicalFile();
-                modMap.computeIfAbsent(canonicalSource, k -> new ObjectArraySet<>()).add(mod);
-            } catch (IOException | SecurityException e) {
-                NormalLogger.instance.error("Failed to get canonical path for mod source: " + source.getPath() + " for mod " + mod.getModId() + ". This mod might not be identified correctly in crashes.", e);
-            } catch (Exception e) {
-                NormalLogger.instance.error("Unexpected error processing source for mod " + mod.getModId(), e);
-            }
+            modMap.computeIfAbsent(mod.getSource().getAbsoluteFile(), k -> new ObjectArraySet<>()).add(mod);
         }
         return modMap;
     }

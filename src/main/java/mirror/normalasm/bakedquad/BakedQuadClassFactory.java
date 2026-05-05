@@ -1,7 +1,6 @@
 package mirror.normalasm.bakedquad;
 
 import mirror.normalasm.core.NormalLoadingPlugin;
-import net.minecraft.launchwrapper.Launch;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;

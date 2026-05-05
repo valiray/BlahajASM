@@ -30,7 +30,7 @@ import java.util.zip.ZipFile;
 @IFMLLoadingPlugin.MCVersion(ForgeVersion.mcVersion)
 public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
-    public static final String VERSION = "5.31";
+    public static final String VERSION = "5.32";
 
     public static final boolean isDeobf = FMLLaunchHandler.isDeobfuscatedEnvironment();
 
@@ -41,7 +41,7 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
 
     public NormalLoadingPlugin() {
         NormalLogger.instance.info("BlahajASM is on the {}-side.", isClient ? "client" : "server");
-        NormalLogger.instance.info("BlahajASM is preparing and loading in mixins since Rongmario's too lazy to write pure ASM at times despite the mod being called 'BlahajASM'");
+        NormalLogger.instance.info("BlahajASM is preparing and loading in mixins since [REDACTED] is too lazy to write pure ASM at times despite the mod being called 'BlahajASM'");
         if (NormalConfig.instance.outdatedCaCertsFix) {
             try (InputStream is = this.getClass().getResource("/cacerts").openStream()) {
                 File cacertsCopy = File.createTempFile("cacerts", "");
@@ -56,22 +56,15 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
         if (NormalConfig.instance.removeForgeSecurityManager) {
             UnsafeNormal.removeFMLSecurityManager();
         }
+        try {
+            FileUtils.deleteDirectory(new File(Launch.minecraftHome, "config/loliasm"));
+            FileUtils.deleteDirectory(new File(Launch.minecraftHome, "config/normalasm"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         if (NormalConfig.instance.crashReportImprovements || NormalConfig.instance.rewriteLoggingWithDeobfuscatedNames) {
-            File modDir = new File(Launch.minecraftHome, "config/normalasm");
-            modDir.mkdirs();
             // Initialize StacktraceDeobfuscator
-            NormalLogger.instance.info("Initializing StacktraceDeobfuscator...");
-            try {
-                File mappings = new File(modDir, "methods-stable_39.csv");
-                if (mappings.exists()) {
-                    NormalLogger.instance.info("Found MCP stable-39 method mappings: {}", mappings.getName());
-                } else {
-                    NormalLogger.instance.info("Downloading MCP stable-39 method mappings to: {}", mappings.getName());
-                }
-                StacktraceDeobfuscator.init(mappings);
-            } catch (Exception e) {
-                NormalLogger.instance.error("Failed to get MCP stable-39 data!", e);
-            }
             NormalLogger.instance.info("Initialized StacktraceDeobfuscator.");
             if (NormalConfig.instance.rewriteLoggingWithDeobfuscatedNames) {
                 NormalLogger.instance.info("Installing DeobfuscatingRewritePolicy...");
@@ -199,8 +192,6 @@ public class NormalLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
                 return NormalConfig.instance.optimizeFurnaceRecipeStore;
             case "mixins.misc_fluidregistry.json":
                 return NormalConfig.instance.quickerEnableUniversalBucketCheck;
-            case "mixins.forgefixes.json":
-                return NormalConfig.instance.fixFillBucketEventNullPointerException || NormalConfig.instance.fixTileEntityOnLoadCME;
             case "mixins.capability.json":
                 return NormalConfig.instance.delayItemStackCapabilityInit;
             case "mixins.singletonevents.json":
